@@ -1,3 +1,16 @@
+# byte-compiled
+__pycache__/
+
 # virtual environment
-venv
+venv/
+
+# IDE default directory
 .idea
+
+# Image
+media/
+
+# compiled code
+*.pyc
+
+cart/
