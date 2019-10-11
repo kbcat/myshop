@@ -85,6 +85,15 @@ td input[type="submit"] {
     padding:4px 10px;
 }
 
+form p {
+    width:100%;
+    overflow:auto;
+}
+
+form ul{
+    font-size:12px;
+}
+
 form p label, form p input {
     float:left;
     clear:both;
@@ -98,7 +107,7 @@ form p label {
 form p input {
     width:300px;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:5px;
     padding:10px 12px;
     border:0;
     background:#efefef;

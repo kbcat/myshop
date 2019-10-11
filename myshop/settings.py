@@ -137,7 +137,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # send mail to console but not external.
+# Internal(console) Mail Setting
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # send mail to console but not external.
+
+# Gmail Setting
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Braintree settings
 BRAINTREE_MERCHANT_ID = ''  # MERCHANT ID
@@ -151,4 +160,4 @@ Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 )
 
-LOGIN_REDIRECT_URL = reverse_lazy('account:account_dashboard')
+LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
