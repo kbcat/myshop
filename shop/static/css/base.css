@@ -137,6 +137,34 @@ ul.errorlist {
     margin-right:10%;
 }
 
+#header ul.menu {
+    list-style:none;
+    float:left;
+    margin:0;
+    padding:0;
+}
+#header ul.menu li {
+    float:left;
+    padding:4px 10px;
+}
+
+#header ul.menu li.selected a, #header ul.menu li.selected a:hover {
+    color:#1b6d32;
+    font-weight:bold;
+}
+
+#header a {
+    color:#333;
+}
+#header a:hover {
+    color:#4CAF50;
+}
+
+#header .user {
+    float:right;
+    padding-top:4px;
+}
+
 #subheader .cart {
     float:right;
     padding-top:4px;
