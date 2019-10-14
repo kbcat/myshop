@@ -27,7 +27,7 @@ SECRET_KEY = 'wep-0bf2_=1#w)!v7b7m6pf%*!v*_*^%f_%d_=n9+t+w(ki*k3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,14 @@ Configuration.configure(
 )
 
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+# Google Login Setting
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''  # Google Consumer Secret
