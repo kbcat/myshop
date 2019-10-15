@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+
+{% block title %}My order{% endblock %}
+
+{% block content %}
+    <h1>My Order</h1>
+    <table class="cart">
+        <thead>
+            <tr>
+                <th>Detail</th>
+                <th>Order No.</th>
+                <th>Paid</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>
+                        {{ order_items }}
+                    </td>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.created }}</td>
+                    <td>{{ order.paid }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

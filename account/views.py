@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm,  UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Profile
+from orders.models import Order, OrderItem
 
 
 def register(request):
@@ -61,3 +62,10 @@ def edit(request):
         profile_form = ProfileEditForm(instance=request.user.profile)
 
     return render(request, 'account/edit.html', {'user_form': user_form, 'profile_form': profile_form})
+
+
+@login_required
+def myorder(request):
+    orders = Order.objects.filter(user=request.user)
+    order_items = OrderItem.objects.filter(order__in=orders)
+    return render(request, 'account/myorder.html', {'orders': orders, 'order_items': order_items})

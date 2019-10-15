@@ -161,6 +161,7 @@ Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 )
 
+LOGIN_URL = reverse_lazy('account:login')
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 
 AUTHENTICATION_BACKENDS = [
