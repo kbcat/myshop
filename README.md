@@ -3,8 +3,11 @@ A simple e-commerce shop
 
 # Features
 Member System - login by account, mail or google
+
 Payment
+
 Cart
+
 Order Management
 
 # Configurations
