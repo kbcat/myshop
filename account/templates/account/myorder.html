@@ -14,14 +14,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for order in orders %}
+            {% for order, order_item in order_lists %}
                 <tr>
                     <td>
-                        {{ order_items }}
+                        <a href=#>
+                        Items
+                        </a>
                     </td>
                     <td>{{ order.id }}</td>
-                    <td>{{ order.created }}</td>
                     <td>{{ order.paid }}</td>
+                    <td>{{ order.created }}</td>
                 </tr>
             {% endfor %}
         </tbody>

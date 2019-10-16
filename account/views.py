@@ -68,4 +68,5 @@ def edit(request):
 def myorder(request):
     orders = Order.objects.filter(user=request.user)
     order_items = OrderItem.objects.filter(order__in=orders)
-    return render(request, 'account/myorder.html', {'orders': orders, 'order_items': order_items})
+    order_lists = zip(orders, order_items)
+    return render(request, 'account/myorder.html', {'order_lists': order_lists})
