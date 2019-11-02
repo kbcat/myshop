@@ -27,7 +27,7 @@ SECRET_KEY = 'wep-0bf2_=1#w)!v7b7m6pf%*!v*_*^%f_%d_=n9+t+w(ki*k3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,10 +78,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+#     # Running locally so connect to either a local MySQL instance or connect
+#     # to Cloud SQL via the proxy.  To start the proxy via command line:
+#     #    $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+#     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -130,7 +132,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
+
 
 # image url
 MEDIA_URL = '/media/'
@@ -144,8 +148,8 @@ CART_SESSION_ID = 'cart'
 # Gmail Setting
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = '[Your email account]'
+EMAIL_HOST_PASSWORD = '[Your email password]'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
