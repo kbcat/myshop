@@ -13,3 +13,5 @@ media/
 # compiled code
 *.pyc
 
+# Static
+static/
